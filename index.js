@@ -9,7 +9,7 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-    if (msg.content === 'send meme') {
+    if (msg.content.toLowerCase() === 'send meme') {
         http.get({
             hostname: 'localhost',
             port: 5000,
