@@ -1,0 +1,28 @@
+{
+  "name": "meme_bot",
+  "version": "0.0.1",
+  "description": "A bot that sends meme every day",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Huy-Ngo/discord-meme-bot.git"
+  },
+  "keywords": [
+    "discord",
+    "meme",
+    "bot"
+  ],
+  "author": "Ngô Ngọc Đức Huy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Huy-Ngo/discord-meme-bot/issues"
+  },
+  "homepage": "https://github.com/Huy-Ngo/discord-meme-bot#readme"
+}
