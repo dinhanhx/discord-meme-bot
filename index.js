@@ -11,9 +11,9 @@ client.on('ready', () => {
 client.on('message', msg => {
     if (msg.content.toLowerCase() === 'send meme') {
         http.get({
-            hostname: 'localhost',
-            port: 5000,
-            path: '/new'
+            hostname: config.apiHost,
+            port: config.apiPort,
+            path: '/memes/new'
         }, (res) => {
             let str = '';
             res.on('data', (chunk) => {
