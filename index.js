@@ -22,7 +22,7 @@ client.on('message', msg => {
 
             res.on('end', () => {
                 const fullResponse = JSON.parse(str);
-                const attachment = new MessageAttachment(fullResponse.chosen.url);
+                const attachment = new MessageAttachment(fullResponse.url);
                 msg.channel.send(attachment);
             });
         });
