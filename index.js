@@ -4,24 +4,23 @@ const { Client, MessageAttachment } = require('discord.js');
 const config = require('./config');
 const client = new Client();
 
-const sendMeme = (res) => {
-    let str = '';
-    res.on('data', (chunk) => {
-        str += chunk;
-    });
-
-    res.on('end', () => {
-        const fullResponse = JSON.parse(str);
-        const attachment = new MessageAttachment(fullResponse.url);
-        msg.channel.send(attachment);
-    });
-}
-
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
 client.on('message', msg => {
+    const sendMeme = (res) => {
+        let str = '';
+        res.on('data', (chunk) => {
+            str += chunk;
+        });
+    
+        res.on('end', () => {
+            const fullResponse = JSON.parse(str);
+            const attachment = new MessageAttachment(fullResponse.url);
+            msg.channel.send(attachment);
+        });
+    }
     const message = msg.content.toLowerCase();
     if (message === 'send meme') {
         http.get({
