@@ -18,6 +18,11 @@ The available commands are:
 
 Please read the [discord.js documentation](https://discord.js.org/#/docs/main/stable/general/welcome) for how to implement bot with Node.js.
 
+## API
+
+API used for meme bot has its source code at: [https://github.com/Huy-Ngo/reddit-meme-api](Reddit Meme API). Please contribute to that project
+if you find that the current API doesn't fulfill your planned feature.
+
 ## Running
 
 To run the bot, use command `node index.js`.
