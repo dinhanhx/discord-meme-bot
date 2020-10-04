@@ -21,6 +21,17 @@ client.on('message', msg => {
             msg.channel.send(attachment);
         });
     }
+    const sendMemeUrl = (res) => {
+        let str = '';
+        res.on('data', (chunk) => {
+            str += chunk;
+        });
+    
+        res.on('end', () => {
+            const fullResponse = JSON.parse(str);
+            msg.channel.send(fullResponse.url);
+        });
+    }
     const message = msg.content.toLowerCase();
     if (message === 'send meme') {
         http.get({
@@ -34,6 +45,18 @@ client.on('message', msg => {
             port: config.apiPort,
             path: 'memes/hot'
         }, sendMeme)
+    } else if (message === 'send meme url') {
+        http.get({
+            hostname: config.apiHost,
+            port: config.apiPort,
+            path: '/memes/new'
+        }, sendMemeUrl);
+    } else if (message === 'send hot meme url') {
+        http.get({
+            hostname: config.apiHost,
+            port: config.apiPort,
+            path: 'memes/hot'
+        }, sendMemeUrl)
     }
 });
 
