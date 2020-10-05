@@ -26,3 +26,27 @@ if you find that the current API doesn't fulfill your planned feature.
 ## Running
 
 To run the bot, use command `node index.js`.
+
+## Cmd list
+
+```
+send meme
+
+send hot meme
+
+send wholesome meme
+
+send hot wholesome meme
+
+send dank meme
+
+send hot dank meme
+
+send anime meme
+
+send hot anime meme
+
+send girl with mini
+
+send hot girl with mini
+```
