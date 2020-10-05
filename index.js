@@ -14,7 +14,7 @@ client.on('message', msg => {
         res.on('data', (chunk) => {
             str += chunk;
         });
-    
+
         res.on('end', () => {
             const fullResponse = JSON.parse(str);
             msg.channel.send(fullResponse.url);
@@ -33,8 +33,55 @@ client.on('message', msg => {
             port: config.apiPort,
             path: 'memes/hot'
         }, sendMeme)
+    } else if (message === 'send wholesome') {
+        http.get({
+            hostname: config.apiHost,
+            port: config.apiPort,
+            path: 'wholesomememes/new'
+        }, sendMeme)
+    } else if (message === 'send hot wholesome') {
+        http.get({
+            hostname: config.apiHost,
+            port: config.apiPort,
+            path: 'wholesomememes/hot'
+        }, sendMeme)
+    } else if (message === 'send dank') {
+        http.get({
+            hostname: config.apiHost,
+            port: config.apiPort,
+            path: 'dankmemes/new'
+        }, sendMeme)
+    } else if (message === 'send hot dank') {
+        http.get({
+            hostname: config.apiHost,
+            port: config.apiPort,
+            path: 'dankmemes/hot'
+        }, sendMeme)
+    } else if (message === 'send anime') {
+        http.get({
+            hostname: config.apiHost,
+            port: config.apiPort,
+            path: 'goodanimemes/new'
+        }, sendMeme)
+    } else if (message === 'send hot anime') {
+        http.get({
+            hostname: config.apiHost,
+            port: config.apiPort,
+            path: 'goodanimemes/hot'
+        }, sendMeme)
+    } else if (message === 'send kemonomimi') {
+        http.get({
+            hostname: config.apiHost,
+            port: config.apiPort,
+            path: 'kemonomimi/new'
+        }, sendMeme)
+    } else if (message === 'send hot kemonomimi') {
+        http.get({
+            hostname: config.apiHost,
+            port: config.apiPort,
+            path: 'kemonomimi/hot'
+        }, sendMeme)
     }
 });
 
 client.login(config.token);
-
